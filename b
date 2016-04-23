@@ -21,7 +21,7 @@ case $1 in
   c|clean) $MAKE clean ;;
   d|distclean) $MAKE distclean ;;
   m|mrproper) $MAKE mrproper ;;
-  -v|v|-V|V|-version|version) echo $B"$ver" ;;
+  -v|v|-V|V|-version|version) echo -e $B"$ver"; noprint=1 ;;
   -h|h|--help|-help|help)
   cat <<EOF
 $ver
@@ -46,6 +46,7 @@ hours=$(($tdiff / 3600 ))
 mins=$((($tdiff % 3600) / 60))
 secs=$(($tdiff % 60))
 echo
+if [ "$noprint" != "1" ]; then
 if [ $ret -eq 0 ] ; then echo -e -n $C"#### сборка успешно завершена "
 else echo -n -e $R"#### некоторые цели сборки не былы достигнуты "; fi
 if [ $hours -gt 0 ] ; then
@@ -62,4 +63,4 @@ fi
  echo -n "($secs секунд$of)"
 fi
 echo -e " ####\n"$N
-if [ $ret -eq 0 ] ; then continie=1; else exit 5;fi
+if [ $ret -eq 0 ] ; then continie=1; else exit 5;fi; fi
