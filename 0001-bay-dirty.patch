@@ -1,27 +1,12 @@
-From ecb5a36c02f7e090b92c56d3b9cadfe10f7c2815 Mon Sep 17 00:00:00 2001
+From 5465a99ff0c6d7e3124841f5a31471ab9003617b Mon Sep 17 00:00:00 2001
 From: ksrt12 <kazakov12stepan2012@live.ru>
-Date: Thu, 21 Apr 2016 20:26:54 +0700
-Subject: [PATCH 1/2] ksrt12 patch
+Date: Wed, 4 May 2016 23:30:57 +0700
+Subject: [PATCH 1/2] bay dirty
 
 ---
- scripts/mkcompile_h     |  3 ++-
  scripts/setlocalversion | 11 -----------
- 2 files changed, 2 insertions(+), 12 deletions(-)
+ 1 file changed, 11 deletions(-)
 
-diff --git a/scripts/mkcompile_h b/scripts/mkcompile_h
-index 6fdc97e..afd6d31 100755
---- a/scripts/mkcompile_h
-+++ b/scripts/mkcompile_h
-@@ -38,7 +38,8 @@ else
- fi
- 
- if [ -z "$KBUILD_BUILD_TIMESTAMP" ]; then
--	TIMESTAMP=`date`
-+	TIMESTAMP=$(echo `date` | sed -e 's/+07/ALEYSK/g')
-+	vecho "  TMSTMP  $TIMESTAMP"
- else
- 	TIMESTAMP=$KBUILD_BUILD_TIMESTAMP
- fi
 diff --git a/scripts/setlocalversion b/scripts/setlocalversion
 index 63d91e2..a7fe39e 100755
 --- a/scripts/setlocalversion
@@ -52,5 +37,5 @@ index 63d91e2..a7fe39e 100755
  		return
  	fi
 -- 
-2.8.1
+2.8.2
 
