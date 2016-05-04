@@ -3,7 +3,7 @@ PATCHLEVEL="`cat torvalds/Makefile | grep "PATCHLEVEL =" | cut -d '=' -f 2`"
 SUBLEVEL="`cat torvalds/Makefile | grep "SUBLEVEL =" | cut -d '=' -f 2`"
 EXTRAVERSION="`cat torvalds/Makefile | grep "EXTRAVERSION ="| cut -d '=' -f 2`"
 NAME="`cat torvalds/Makefile | grep "NAME =" | cut -d '=' -f 2`"
-ver="kernel build script by ksrt12 v3.0"
+ver="kernel build script by ksrt12 v3.0.1"
 N="\033[0m"
 B="\033[1;34m"; b="\033[34m"
 C="\033[1;36m"; c="\033[36m"
@@ -11,7 +11,7 @@ G="\033[1;32m"; g="\033[32m"
 M="\033[1;35m"; m="\033[35m"
 R="\033[1;31m"; r="\033[31m"
 Y="\033[1;33m"; y="\033[33m"
-echo -e $M"Kernel version 4"$(echo ".$PATCHLEVEL.$SUBLEVEL$EXTRAVERSION" | sed -e 's/ //g')$NAME
+echo -e $M"Kernel version 4"$(echo ".$PATCHLEVEL.$SUBLEVEL$EXTRAVERSION" | sed -e 's/ //g')$NAME$N
 jobs=-j$(cat /proc/cpuinfo | grep -e "^processor" | wc -l)
 MAKE="schedtool -B -n 1 -e ionice -n 1 make $jobs -C `pwd`/torvalds O=`pwd`/out"
 start_time=$(date +"%s")
