@@ -42,7 +42,7 @@ d|distclean  - mrproper + удаление резервных редакторо
 EOF
 exit 2
 ;;
-  *) $MAKE ;;
+  *) $MAKE $@;;
 esac
 ret=$?
 end_time=$(date +"%s")

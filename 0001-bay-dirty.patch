@@ -1,7 +1,7 @@
-From 5465a99ff0c6d7e3124841f5a31471ab9003617b Mon Sep 17 00:00:00 2001
+From 4ebfc1f76d47fdd542eec4910a50acbb423d5d1b Mon Sep 17 00:00:00 2001
 From: ksrt12 <kazakov12stepan2012@live.ru>
-Date: Wed, 16 May 2016 20:25:12 +0700
-Subject: [PATCH] bay dirty
+Date: Mon, 16 May 2016 20:25:12 +0700
+Subject: [PATCH 1/2] bay dirty
 
 ---
  scripts/setlocalversion | 11 -----------
@@ -37,5 +37,5 @@ index 63d91e2..a7fe39e 100755
  		return
  	fi
 -- 
-2.8.2
+2.8.3
 
