@@ -1,7 +1,7 @@
 From 4ebfc1f76d47fdd542eec4910a50acbb423d5d1b Mon Sep 17 00:00:00 2001
 From: ksrt12 <kazakov12stepan2012@live.ru>
 Date: Mon, 16 May 2016 20:25:12 +0700
-Subject: [PATCH 1/2] bay dirty
+Subject: [PATCH] bay dirty
 
 ---
  scripts/setlocalversion | 11 -----------
