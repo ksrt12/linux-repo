@@ -1845,7 +1845,7 @@ index 0000000..dc04fd1
 +CONFIG_PPP_FILTER=y
 +# CONFIG_PPP_MPPE is not set
 +CONFIG_PPP_MULTILINK=y
-+# CONFIG_PPPOE is not set
++CONFIG_PPPOE=m
 +# CONFIG_PPP_ASYNC is not set
 +# CONFIG_PPP_SYNC_TTY is not set
 +# CONFIG_SLIP is not set
