@@ -13,6 +13,7 @@ R="\033[1;31m"; r="\033[31m"
 Y="\033[1;33m"; y="\033[33m"
 echo -e $M"Kernel version 4"$(echo ".$PATCHLEVEL.$SUBLEVEL$EXTRAVERSION" | sed -e 's/ //g')$NAME$N
 jobs=-j$(cat /proc/cpuinfo | grep -e "^processor" | wc -l)
+repotp="-j2 -f --force-sync"
 MAKE="schedtool -B -n 1 -e ionice -n 1 make $jobs -C `pwd`/torvalds O=`pwd`/out"
 start_time=$(date +"%s")
 if [ ! -d out ]; then mkdir out; fi
@@ -20,8 +21,7 @@ if [ "$1" != "r" ]; then
 if [ ! -e linux-repo/apply ]; then cd torvalds; git am -3 ../linux-repo/*.patch; cd .. ; touch linux-repo/apply; fi
 if [ ! -e out/.config ]; then $MAKE aspire5102AWLMi_defconfig; fi; fi
 case $1 in
-  r) if [ "$2" == "t" ]; then $ec repo --trace sync -l
-                else $ec repo sync $jobs --force-sync;fi; rm -rf linux-repo/apply;exit 0 ;;
+  r) if [ "$2" == "t" ]; then repo --trace sync -l $repotp; else repo sync $repotp; fi; rm -rf linux-repo/apply;exit 0 ;;
   i|install) sudo $MAKE modules_install install ;;
   c|clean) $MAKE clean ;;
   d|distclean) $MAKE distclean ;;
